@@ -1,8 +1,10 @@
 import 'package:crypto_currencies_with_getx/pages/home_page.dart';
+import 'package:crypto_currencies_with_getx/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  await registerDio();
   runApp(const MyApp());
 }
 

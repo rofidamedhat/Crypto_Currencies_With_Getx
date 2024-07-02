@@ -1,4 +1,6 @@
+import 'package:crypto_currencies_with_getx/widgets/asset_dialog_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,7 +21,9 @@ class HomePage extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.dialog(AssetDialogWidget());
+          },
           icon: const Icon(
             Icons.add,
           ),
