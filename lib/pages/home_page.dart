@@ -1,3 +1,4 @@
+
 import 'package:crypto_currencies_with_getx/controller/asset_controller.dart';
 import 'package:crypto_currencies_with_getx/pages/details_screen.dart';
 import 'package:crypto_currencies_with_getx/utils.dart';
@@ -101,7 +102,11 @@ class HomePage extends StatelessWidget {
             margin: const EdgeInsets.all(5),
             child: ListTile(
               onTap: () {
-                Get.to(() => const DetailsPage());
+                Get.to(
+                  () => DetailsPage(
+                    coinData: assetController.getCoinName(trackedAsset.name!)!,
+                  ),
+                );
               },
               leading: Image.network(getAssetImage(trackedAsset.name!)),
               title: Text(trackedAsset.name!),

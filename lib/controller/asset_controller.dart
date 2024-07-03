@@ -31,11 +31,11 @@ class AssetController extends GetxController {
   }
 
   double getPortofolioValue() {
-    if (trackedassets.isEmpty) {
+    if(trackedassets.isEmpty){
       return 0;
     }
-    if (coinList.isEmpty) {
-      return 0;
+    if(coinList.isEmpty){
+      return 0 ;
     }
     double value = 0.0;
     for (TrackedAsset asset in trackedassets) {
