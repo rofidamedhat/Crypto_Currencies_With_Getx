@@ -1,3 +1,4 @@
+import 'package:crypto_currencies_with_getx/controller/asset_controller.dart';
 import 'package:crypto_currencies_with_getx/models/api_response.dart';
 import 'package:crypto_currencies_with_getx/services/dio_services.dart';
 import 'package:flutter/material.dart';
@@ -73,10 +74,17 @@ class AssetDialogWidget extends StatelessWidget {
                 print(value);
               },
             ),
-            MaterialButton(//////////////////////////
+            MaterialButton(
               color: Theme.of(context).colorScheme.primary,
               onPressed: () {
-                Get.back();
+                AssetController assetController = Get.find();
+                assetController.addTrackedAssets(
+                  controller.selectedAsset.value,
+                  controller.assertValue.value,
+                );
+                Get.back(
+                  closeOverlays: true,
+                );
               },
               child: const Text('Add Asset'),
             ),

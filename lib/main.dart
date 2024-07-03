@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 void main() async {
   await registerDio();
+  await registerAssetController();
   runApp(const MyApp());
 }
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/home',
       routes: {
-        '/home': (context) => const HomePage(),
+        '/home': (context) =>  HomePage(),
       },
     );
   }
